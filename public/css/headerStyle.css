@@ -1,0 +1,127 @@
+@import url(variables.css);
+
+/* Estilização para o header e footer */
+.header_footer{
+    height: 56px;
+    background-color: var(--primary-blue-010);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Estilização de fixação do header e footer */
+header{
+    top: 0;
+    position: fixed;
+}
+
+footer{
+    bottom: 0;
+}
+
+/* Estilização dos logos */
+.logo-footer .logo{
+    max-width: 100%;
+    height: 50px;
+}
+
+/* Estilização do menu superior e infeior */
+.div-menu, .div-menu-footer{
+    display: flex;
+    flex: 0.9;
+    justify-content: space-between;
+}
+
+
+.menu-list, .menu-list-footer{
+    list-style: none;
+    display: flex;
+    white-space: nowrap;
+}
+
+.menu-list li,.header_footer p, .menu-list-footer li{
+    padding: 5px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav-button{
+    margin-left: 50px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+/* Estilização do hamburger menu */
+.hamburger-button{
+    color: #ffffff; 
+    font-size:xx-large;
+    display: none !important;
+    cursor: pointer;
+}
+
+/* Estilização que ativa quando a tela diminui, exibindo o hamburger menu e 
+transformando o menu superior em um lateral */
+@media(max-width: 1100px){
+    .hamburger-button{
+        display: block !important;
+    }
+
+    .div-menu {
+        position: absolute;
+        top: 56px;
+        right: 0;
+        width: 200px;
+        z-index: 1;
+        height: 100vh;
+        background-color: var(--primary-blue-010);
+        flex-direction: column;
+        align-items: start;
+        justify-content:unset;
+        transform: translateX(100%);
+    }
+
+    .menu-list{
+        flex-direction: column;
+        margin-top: 20px;
+
+    }  
+    
+    .div-menu.active {
+        transform: translateX(0);
+    }
+    /* Responsividade do footer */
+    .div-menu-footer p{
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+
+    .div-menu-footer{
+        justify-content:center;
+    }
+
+    .header_footer{
+        justify-content: space-between;
+        padding-inline: 10px;
+    }
+
+    .menu-list-footer{
+        display: none;
+    }
+    /* Estilização para quando a tela fica ainda mais pequena */
+    @media(max-width: 450px){
+        .div-menu{
+            width: 100%;
+        }
+
+        .logo-footer{
+            height: 25px;
+        }
+    }
+
+
+}

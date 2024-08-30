@@ -1,0 +1,295 @@
+@import url(variables.css);
+
+/* Estilos de resets e definições basicas */
+* {
+  font-family: "roboto";
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Definição da do corpo principal, e do espaço de grid */
+body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 100%;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 1400px;
+  padding-top: 56px;
+  padding-bottom: 110px;
+  position: relative;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 70px;
+  margin-top: 20px;
+}
+
+/* Definições gerais de cards */
+
+.card {
+  border: 1px solid var(--neutral-grey);
+  border-radius: 10px;
+  padding: 15px;
+  height: 280px;
+}
+
+.campos-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 80%;
+  justify-content: center;
+}
+
+/* Estilizações dos input de forma geral */
+
+.input-card {
+  color: black;
+  font-size: 1rem;
+  border: 1px solid var(--neutral-grey);
+  border-radius: 4px;
+  padding: 5px;
+  resize: none;
+}
+
+.input-card::placeholder {
+  color: rgba(120, 120, 120, 0.5);
+}
+
+/* Estilizações do padrão dos botões e modificações para certos cards card*/
+
+button {
+  background-color: var(--primary-orange-010);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.calcularBtn {
+  width: 30%;
+}
+
+/* Estilizações para o card dos corretores */
+
+.area-foto {
+  background-size: cover;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.area-foto:after {
+  content: "";
+  width: 103%;
+  height: 103%;
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  filter: blur(2px);
+}
+
+.conteudo {
+  position: relative;
+  z-index: 1;
+}
+
+.corretora-img {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  z-index: 1000;
+}
+
+.corretor {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+.tel {
+  text-decoration: underline;
+  color: var(--primary-orange-010);
+  cursor: pointer;
+  font-size: small;
+}
+
+h3,
+p {
+  color: var(--neutral-grey);
+}
+
+/* Titulo para os cards de mensagem e regra de tres */
+
+h2 {
+  color: var(--primary-blue-010);
+}
+
+/* Estilização para campos usados no regra de tres e msg */
+
+.input-regra-line .input-card {
+  width: 100px;
+}
+
+/* Estilizações para o card de regra de tres */
+
+.input-regra-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.linha {
+  height: 1px;
+  background-color: black;
+  flex-grow: 1;
+}
+
+.input-resultado {
+  border: 2px solid var(--primary-orange-010);
+}
+
+/* Estilizações para o card modal e download */
+
+.background-card {
+  background-size: cover;
+}
+
+.modalBtn,
+.downloadBtn {
+  width: 100%;
+  position: relative;
+  top: 300px;
+}
+
+/* Estilização para o card download */
+
+.area-center-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.retangulo-card {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.retangulo-card p {
+  color: white;
+}
+
+.retangulo {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-orange-010);
+  opacity: 0.8;
+  padding-block: 5px;
+  bottom: 10px;
+}
+
+.downloadBtn {
+  width: 80%;
+  top: 34px;
+}
+
+/* Estilização para o modal */
+
+.modal-back {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.modal-container {
+  background-color: white;
+  width: 80%;
+  height: fit-content;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid black;
+}
+
+.close {
+  color: var(--primary-orange-010);
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.modal-conteudo {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding-block: 20px;
+}
+.modal-image {
+  width: 70%;
+}
+
+/* Estilizações para o card com animação */
+.card-animacao-container {
+  overflow: hidden;
+  border: 1px solid var(--neutral-grey);
+  border-radius: 10px;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(2.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card-animacao-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  animation: zoomOut 10s ease-out;
+}

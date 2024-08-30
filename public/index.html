@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="stylesheet" href="css/indexStyle.css" />
+    <link rel="stylesheet" href="css/headerStyle.css" />
+    <link rel="stylesheet" href="css/footerStyle.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bdedc57966.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imóvel Guide</title>
+  </head>
+
+  <body>
+    <!-- header/hamburger menu -->
+    <header class="header_footer">
+      <img
+        src="image/logo-imovel-guide.png"
+        alt="Logo da Imóvel Guide"
+        class="logo"
+      />
+      <div class="div-menu" id="div-menu">
+        <ul class="menu-list">
+          <li>Condomínios</li>
+          <li>Fórum</li>
+          <li>Guia</li>
+          <li>Artigos</li>
+          <li>Ferramentas</li>
+        </ul>
+        <ul class="menu-list">
+          <li>Cotar Imóvel</li>
+          <li>Planos</li>
+          <li>Entrar</li>
+          <li class="nav-button">CADASTRE-SE</li>
+        </ul>
+      </div>
+      <i class="hamburger-button fa-solid fa-bars" id="hamburger-btn"></i>
+    </header>
+
+    <!-- grid contendo os cards -->
+    <main class="card-container">
+      <div class="card">
+        <div class="corretor">
+          <div
+            class="area-foto"
+            style="background-image: url(image/Corretora.jpg)"
+          >
+            <div class="conteudo">
+              <img
+                src="image/Corretora.jpg"
+                alt="Corredora 1"
+                class="corretora-img"
+              />
+            </div>
+          </div>
+
+          <div class="corretor-content">
+            <h3>Nome Corretora</h3>
+            <p>3.000 pontos</p>
+            <p id="tel1" class="tel">ver telefone</p>
+          </div>
+        </div>
+
+        <div class="corretor">
+          <div
+            class="area-foto"
+            style="background-image: url(image/Corretor.jpg)"
+          >
+            <div class="conteudo">
+              <img
+                src="image/Corretor.jpg"
+                alt="Corredora 1"
+                class="corretora-img"
+              />
+            </div>
+          </div>
+          <div class="corretor-content">
+            <h3>Nome Corretor</h3>
+            <p>1.260 pontos</p>
+            <p id="tel2" class="tel">ver telefone</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Mande uma mensagem:</h2>
+        <div class="campos-card">
+          <input
+            type="text"
+            placeholder="Digite seu CPF"
+            class="input-card"
+            id="cpf"
+          />
+          <input
+            type="text"
+            placeholder="Digite seu telefone"
+            class="input-card"
+            id="tel"
+          />
+          <textarea
+            type="text"
+            placeholder="Digite o assunto"
+            class="input-card"
+            rows="4"
+          ></textarea>
+        </div>
+        <button id="sendMsgBtn">Enviar Mensagem</button>
+      </div>
+
+      <div class="card">
+        <h2>Regra de 3</h2>
+        <div class="campos-card">
+          <div class="input-regra-line">
+            <input
+              type="number"
+              placeholder="60"
+              class="input-card"
+              id="num1"
+            />
+            <div class="linha"></div>
+            <input
+              type="number"
+              placeholder="100"
+              class="input-card"
+              id="num2"
+            />
+          </div>
+
+          <div class="input-regra-line">
+            <input
+              type="number"
+              placeholder="30"
+              class="input-card"
+              id="num3"
+            />
+            <div class="linha"></div>
+            <input
+              type="number"
+              placeholder=""
+              class="input-card input-resultado"
+              id="res"
+              disabled
+              value=""
+            />
+          </div>
+        </div>
+        <button id="calcularBtn" class="calcularBtn">Calcular</button>
+      </div>
+
+      <div
+        class="card background-card"
+        style="background-image: url(image/casa.jpg)"
+      >
+        <button class="modalBtn" id="modalBtn">ABRIR IMAGEM NO MODAL</button>
+      </div>
+
+      <div
+        id="retanguloCard"
+        class="card background-card"
+        style="background-image: url(image/casa.jpg)"
+      >
+        <div class="retangulo-card">
+          <p class="retangulo">Imovel Guide</p>
+        </div>
+        <div class="area-center-btn">
+          <button class="downloadBtn" id="downloadBtn">Download</button>
+        </div>
+      </div>
+
+      <div class="card-animacao-container">
+        <img src="image/casa.jpg" alt="Corredora 1" class="card-animacao-img" />
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-back" id="modal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <span class="close" id="modalCloseBtn">&times;</span>
+        </div>
+        <div class="modal-conteudo">
+          <img
+            src="image/casa.jpg"
+            alt="Imagem da casa no modal"
+            class="modal-image"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Cabeçalho -->
+    <footer class="header_footer">
+      <div class="div-menu-footer" id="div-menu">
+        <ul class="menu-list-footer">
+          <li>Termos</li>
+          <li>Contatos</li>
+          <li>Sobre</li>
+        </ul>
+
+        <p>&copy; Copyright 2022. Todos os direitos reservados.</p>
+      </div>
+      <img
+        src="image/logo-imovel-guide.png"
+        alt="Logo da Imóvel Guide"
+        class="logo logo-footer"
+      />
+    </footer>
+
+    <!-- JS -->
+    <script src="js/indexScript.js" type="module"></script>
+  </body>
+</html>
